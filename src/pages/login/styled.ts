@@ -6,14 +6,15 @@ export const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  /* min-height: 100vh; */
+  padding-bottom: 7rem;
 `;
 
 export const imgWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 65px 0 100px 0;
+  margin: 4.06rem 0 6.25rem 0;
 `;
 
 export const InputWrapper = styled.div`
@@ -21,8 +22,8 @@ export const InputWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 40px;
-  margin-bottom: 110px;
+  gap: 2.5rem;
+  margin-bottom: 6.875rem;
 `;
 
 export const ButtonWrapper = styled.div`
@@ -30,28 +31,29 @@ export const ButtonWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
 `;
 
 export const GoSignUpBtn = styled.button`
   display: flex;
-  width: 330px;
-  height: 50px;
-  padding: 10px 16px;
+  width: 20.625rem;
+  height: 3.125rem;
+  padding: 0.625rem 1rem;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  border-radius: 15px;
-  font-size: 14px;
+  gap: 0.625rem;
+  border-radius: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 600;
   font-family: "Pretendard";
   border: 1px solid #eee;
   background-color: #eee;
   color: #3b3b3b;
   cursor: pointer;
+
   & span {
     color: #349989;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
   }
 `;

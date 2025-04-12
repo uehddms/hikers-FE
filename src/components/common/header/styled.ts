@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeaderText = styled.span`
   color: #3b3b3b;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-family: "Pretendard";
   font-weight: 700;
   word-wrap: break-word;
@@ -17,7 +17,7 @@ export const TextWrapper = styled.div`
 export const BackBtnWrapper = styled.button`
   position: relative;
   background: none;
-  font-size: 24px;
+  font-size: 1.5rem;
   cursor: pointer;
 `;
 
@@ -26,6 +26,6 @@ export const Wrapper = styled.div<{ $isOnboarding?: boolean }>`
   height: 100%;
   display: flex;
   flex-direction: row;
-  padding: ${({ $isOnboarding }) => ($isOnboarding ? "45px 0px 0px 13px" : "45px 0px 0px 3px")};
+  padding: ${({ $isOnboarding }) => ($isOnboarding ? "2.8125rem 0 0 0.8125rem" : "2.8125rem 0 0 0.1875rem")};
   position: relative;
 `;

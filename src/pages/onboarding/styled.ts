@@ -5,22 +5,22 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 154px 0 33px 0;
+  padding: 9.625rem 0 2.0625rem 0;
   align-items: center;
-  gap: 154px;
+  gap: 9.625rem;
 `;
 
 export const LogoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 156px;
+  gap: 9.75rem;
 `;
 
 export const ButtonWrapper = styled.div`
-  margin-top: 40px;
+  margin-top: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 0.875rem;
 `;
