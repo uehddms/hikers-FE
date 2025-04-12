@@ -26,6 +26,6 @@ export const Wrapper = styled.div<{ $isOnboarding?: boolean }>`
   height: 100%;
   display: flex;
   flex-direction: row;
-  padding: ${({ $isOnboarding }) => ($isOnboarding ? "45px 0px 11px 3px" : "45px 0px 11px 13px")};
+  padding: ${({ $isOnboarding }) => ($isOnboarding ? "45px 0px 0px 13px" : "45px 0px 0px 3px")};
   position: relative;
 `;
