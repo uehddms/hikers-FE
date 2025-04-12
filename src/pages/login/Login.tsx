@@ -4,8 +4,10 @@ import logo from "../../assets/logo.svg";
 import { BottomBtn } from "../../components/common/button/BottomBtn";
 import { Header } from "../../components/common/header/Header";
 import * as Styled from "./styled";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [formValue, setFormValue] = useState({
     username: "",
     password: "",
@@ -22,7 +24,7 @@ const Login = () => {
   const isValid = formValue.username.trim() !== "" && formValue.password.trim() !== "";
 
   const handleBackBtn = () => {
-    console.log("뒤로가기 버튼 클릭");
+    navigate("/");
   };
 
   const handleLogin = () => {
@@ -30,7 +32,7 @@ const Login = () => {
   };
 
   const handleGoSignUp = () => {
-    console.log("회원가입으로 이동");
+    navigate("/signup");
   };
 
   return (
