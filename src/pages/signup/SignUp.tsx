@@ -49,7 +49,7 @@ const SignUp = () => {
             name="username"
             value={formValue.username}
             onChange={handleChange}
-            placeholder="아이디를 입력해 주세요"
+            placeholder="아이디를 입력해주세요"
           />
           <Input
             title="비밀번호"
@@ -57,7 +57,7 @@ const SignUp = () => {
             name="password"
             value={formValue.password}
             onChange={handleChange}
-            placeholder="비밀번호를 입력해 주세요"
+            placeholder="비밀번호를 입력해주세요"
           />
         </Styled.InputContent>
         <Styled.Line></Styled.Line>
@@ -68,7 +68,7 @@ const SignUp = () => {
             name="nickname"
             value={formValue.nickname}
             onChange={handleChange}
-            placeholder="닉네임을 입력해 주세요"
+            placeholder="닉네임을 입력해주세요"
           />
           <Input
             title="이메일"
@@ -76,7 +76,7 @@ const SignUp = () => {
             name="email"
             value={formValue.email}
             onChange={handleChange}
-            placeholder="이메일을 입력해 주세요"
+            placeholder="이메일을 입력해주세요"
           />
         </Styled.InputContent>
         <Styled.ButtonWrapper>

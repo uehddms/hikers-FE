@@ -48,7 +48,7 @@ const Login = () => {
           name="username"
           value={formValue.username}
           onChange={handleChange}
-          placeholder={"아이디를 입력해 주세요"}
+          placeholder={"아이디를 입력해주세요"}
         />
         <Input
           title={"비밀번호"}
@@ -56,7 +56,7 @@ const Login = () => {
           name="password"
           value={formValue.password}
           onChange={handleChange}
-          placeholder={"비밀번호를 입력해 주세요"}
+          placeholder={"비밀번호를 입력해주세요"}
         />
       </Styled.InputWrapper>
       <Styled.ButtonWrapper>
