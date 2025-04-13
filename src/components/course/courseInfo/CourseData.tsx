@@ -1,13 +1,23 @@
+import { useState } from "react";
+import { Modal } from "../../common/modal/Modal";
 import { GreenBtn } from "../../common/button/GreenBtn";
 import * as Styled from "./CourseData.styled";
 
+declare global {
+  interface Window {
+    Kakao: any;
+  }
+}
+
 const CourseData = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const dummyCourse = {
     mountainName: "인왕산",
     sections: [
       {
         id: 1,
-        name: "돈의문터 - 창의문이었는데 길어졌음 ",
+        name: "돈의문터 - 창의문",
         startName: "돈의문터",
         endName: "창의문",
         level: "중",
@@ -35,37 +45,80 @@ const CourseData = () => {
   const firstSection = dummyCourse.sections[0];
   const lastSection = dummyCourse.sections[dummyCourse.sections.length - 1];
   const courseName = `${firstSection.startName} ⟷ ${lastSection.endName}`;
+  const courseTitle = `${dummyCourse.mountainName} ${dummyCourse.sections[0].name}`;
+  const courseLevel = dummyCourse.sections[0].level;
 
-  const handleShare = () => {
-    console.log("코스 공유 버튼 클릭");
+  const handleKakaoShare = () => {
+    if (window.Kakao) {
+      window.Kakao.Share.sendDefault({
+        objectType: "feed",
+        content: {
+          title: `${courseTitle} ${courseLevel}`,
+          description: `소요시간: ${formatTime(totalDuration)}\n코스길이: ${totalDistance.toFixed(1)}km\n고도: ${totalElevation}m`,
+          imageUrl: "./assets/logo.svg",
+          link: {
+            mobileWebUrl: window.location.href,
+            webUrl: window.location.href,
+          },
+        },
+        buttons: [
+          {
+            title: "코스 자세히 보기",
+            link: {
+              mobileWebUrl: window.location.href,
+              webUrl: window.location.href,
+            },
+          },
+        ],
+      });
+    }
+  };
+
+  const handleLinkShare = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      alert("링크가 복사되었습니다.");
+    } catch (err) {
+      console.error("링크 복사 실패:", err);
+    }
   };
 
   return (
-    <Styled.Wrapper>
-      <Styled.CourseTitleWrapper>
-        <Styled.CourseTitle>
-          {dummyCourse.mountainName} {dummyCourse.sections[0].name}
-        </Styled.CourseTitle>
-        <Styled.CourseLevel>{dummyCourse.sections[0].level}</Styled.CourseLevel>
-        <Styled.GreenBtnWrapper>
-          <GreenBtn onClick={handleShare}>코스 공유하기</GreenBtn>
-        </Styled.GreenBtnWrapper>
-      </Styled.CourseTitleWrapper>
-      <Styled.CourseMeta className="course-meta">
-        <Styled.StartToEnd>{courseName}</Styled.StartToEnd>
-        <Styled.CourseStats className="stats">
-          <Styled.CourseStatsItem>
-            <span style={{ color: "#A4A4A4" }}>소요시간</span> {formatTime(totalDuration)}
-          </Styled.CourseStatsItem>
-          <Styled.CourseStatsItem>
-            <span style={{ color: "#A4A4A4" }}>코스길이</span> {totalDistance.toFixed(1)}km
-          </Styled.CourseStatsItem>
-          <Styled.CourseStatsItem>
-            <span style={{ color: "#A4A4A4" }}>고도</span> {totalElevation}m
-          </Styled.CourseStatsItem>
-        </Styled.CourseStats>
-      </Styled.CourseMeta>
-    </Styled.Wrapper>
+    <>
+      {isModalOpen && (
+        <Modal
+          title={courseTitle}
+          onClose={() => setIsModalOpen(false)}
+          onKakaoShare={handleKakaoShare}
+          onLinkShare={handleLinkShare}
+        />
+      )}
+      <Styled.Wrapper>
+        <Styled.CourseTitleWrapper>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Styled.CourseTitle>{courseTitle}</Styled.CourseTitle>
+            <Styled.CourseLevel>{courseLevel}</Styled.CourseLevel>
+          </div>
+          <Styled.GreenBtnWrapper>
+            <GreenBtn onClick={() => setIsModalOpen(true)}>코스 공유하기</GreenBtn>
+          </Styled.GreenBtnWrapper>
+        </Styled.CourseTitleWrapper>
+        <Styled.CourseMeta>
+          <Styled.StartToEnd>{courseName}</Styled.StartToEnd>
+          <Styled.CourseStats>
+            <Styled.CourseStatsItem>
+              <span style={{ color: "#A4A4A4" }}>소요시간</span> {formatTime(totalDuration)}
+            </Styled.CourseStatsItem>
+            <Styled.CourseStatsItem>
+              <span style={{ color: "#A4A4A4" }}>코스길이</span> {totalDistance.toFixed(1)}km
+            </Styled.CourseStatsItem>
+            <Styled.CourseStatsItem>
+              <span style={{ color: "#A4A4A4" }}>고도</span> {totalElevation}m
+            </Styled.CourseStatsItem>
+          </Styled.CourseStats>
+        </Styled.CourseMeta>
+      </Styled.Wrapper>
+    </>
   );
 };
 
