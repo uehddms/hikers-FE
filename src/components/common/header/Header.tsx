@@ -1,0 +1,22 @@
+import { ReactNode } from "react";
+import * as Styled from "./styled";
+import backBtn from "../../../assets/backBtn.svg";
+
+type HeaderProps = {
+  children?: ReactNode;
+  onClick?: () => void;
+  isOnboarding?: boolean;
+};
+
+export const Header = ({ onClick, children, isOnboarding = false }: HeaderProps) => {
+  return (
+    <Styled.Wrapper $isOnboarding={isOnboarding}>
+      <Styled.BackBtnWrapper onClick={onClick}>
+        <img src={backBtn} />
+      </Styled.BackBtnWrapper>
+      <Styled.TextWrapper>
+        <Styled.HeaderText>{children}</Styled.HeaderText>
+      </Styled.TextWrapper>
+    </Styled.Wrapper>
+  );
+};
