@@ -18,17 +18,17 @@ export const CourseTitleWrapper = styled.div`
 `;
 
 export const CourseTitle = styled.div`
+  width: 12rem;
   color: #3b3b3b;
   font-family: "Pretendard";
   font-size: 1.25rem;
   font-weight: 700;
   line-height: normal;
   flex: 1;
+  margin-right: 0.2rem;
 `;
 
 export const CourseLevel = styled.div`
-  margin-left: -1.1rem;
-
   display: flex;
   width: 1rem;
   height: 1rem;

@@ -14,6 +14,8 @@ export const Wrapper = styled.div`
     font-size: 18px;
     font-weight: 600;
   }
+
+  position: relative;
 `;
 
 export const imgWrapper = styled.div`
