@@ -4,17 +4,21 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 9.625rem 0 2.0625rem 0;
+  justify-content: space-between;
+  padding: 10vh 0 5vh 0;
   align-items: center;
-  gap: 9.625rem;
+  gap: 2rem;
+  height: 100vh;
 `;
 
 export const LogoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 9.75rem;
+  gap: 5rem;
+  width: 100%;
+  flex-grow: 1; //남은 공간 채우기
+  justify-content: center;
 `;
 
 export const ButtonWrapper = styled.div`
