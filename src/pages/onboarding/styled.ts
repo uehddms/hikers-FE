@@ -5,10 +5,10 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10vh 0 5vh 0;
+  padding: 2rem 0 0 0;
   align-items: center;
-  gap: 2rem;
-  height: 100vh;
+  min-height: 100vh; // Fallback
+  min-height: 100dvh;
 `;
 
 export const LogoWrapper = styled.div`
