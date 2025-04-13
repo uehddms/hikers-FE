@@ -17,3 +17,21 @@ export const BottomBtn = styled.button`
   color: #ffffff;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 `;
+
+export const GreenBtn = styled.button<{ padding?: string }>`
+  display: flex;
+  height: 1.875rem;
+  padding: ${({ padding }) => padding || "0.375rem 1rem"};
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: 0.625rem;
+  background: #349989;
+  color: #ffffff;
+  font-family: "Pretendard";
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+`;
