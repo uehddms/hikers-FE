@@ -1,4 +1,4 @@
-import * as Styled from "./styled";
+import * as Styled from "./SignUp.styled";
 import { BottomBtn } from "../../components/common/button/BottomBtn";
 import { Input } from "../../components/common/input/Input";
 import { Header } from "../../components/common/header/Header";
