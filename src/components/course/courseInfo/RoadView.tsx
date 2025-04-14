@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import * as Styled from "./styled";
+import * as Styled from "./RoadView.styled";
 
 declare global {
   interface Window {
