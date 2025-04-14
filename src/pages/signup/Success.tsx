@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { BottomBtn } from "../../components/common/button/BottomBtn";
-import * as Styled from "./styled";
+import * as Styled from "./Success.styled";
 
 export default function Success() {
   const navigate = useNavigate();
