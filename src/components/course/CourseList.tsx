@@ -83,7 +83,6 @@ export default function CourseList({ title }: CourseListProps) {
 
   const isFirstPage = currentPage === 0;
   const isLastPage = currentPage === Math.ceil(courseData.length / itemsPerPage) - 1;
-  console.log(isLastPage);
 
   return (
     <Styled.ListWrapper>

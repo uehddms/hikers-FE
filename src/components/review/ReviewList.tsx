@@ -54,7 +54,6 @@ export default function ReviewList({ title }: ReviewListProps) {
 
   const isFirstPage = currentPage === 0;
   const isLastPage = currentPage === Math.ceil(reviewData.length / itemsPerPage) - 1;
-  console.log(isLastPage);
 
   return (
     <Styled.ListWrapper>
