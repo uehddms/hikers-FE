@@ -6,13 +6,6 @@ export const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 100%;
-
-  h3 {
-    margin: 24px 0 16px;
-    font-size: 18px;
-    font-weight: 600;
-  }
-
   position: relative;
 `;
 

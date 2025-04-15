@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Modal } from "../../common/modal/Modal";
 import { GreenBtn } from "../../common/button/GreenBtn";
+import { LevelComp } from "../../common/item/Level";
 import * as Styled from "./CourseData.styled";
 
 interface KakaoShareButton {
@@ -131,7 +132,7 @@ const CourseData = () => {
         <Styled.CourseTitleWrapper>
           <div style={{ display: "flex", alignItems: "center" }}>
             <Styled.CourseTitle>{courseTitle}</Styled.CourseTitle>
-            <Styled.CourseLevel>{courseLevel}</Styled.CourseLevel>
+            <LevelComp $level={courseLevel}>{courseLevel}</LevelComp>
           </div>
           <Styled.GreenBtnWrapper>
             <GreenBtn onClick={() => setIsModalOpen(true)}>코스 공유하기</GreenBtn>
