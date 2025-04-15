@@ -3,9 +3,39 @@ import { Modal } from "../../common/modal/Modal";
 import { GreenBtn } from "../../common/button/GreenBtn";
 import * as Styled from "./CourseData.styled";
 
+type KakaoShareContent = {
+  title: string;
+  description: string;
+  imageUrl: string;
+  link: {
+    mobileWebUrl: string;
+    webUrl: string;
+  };
+};
+
+type KakaoShareButton = {
+  title: string;
+  link: {
+    mobileWebUrl: string;
+    webUrl: string;
+  };
+};
+
+type KakaoShareParams = {
+  objectType: string;
+  content: KakaoShareContent;
+  buttons: KakaoShareButton[];
+};
+
+type KakaoShare = {
+  sendDefault: (params: KakaoShareParams) => void;
+};
+
 declare global {
   interface Window {
-    Kakao: any;
+    Kakao: {
+      Share: KakaoShare;
+    };
   }
 }
 
