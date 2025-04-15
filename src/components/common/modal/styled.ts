@@ -21,11 +21,13 @@ export const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  z-index: 1000;
+  z-index: 999; // sketchmap 때문에 999로 설정
 `;
 
 export const ModalContent = styled.div`
-  width: 100%;
+  position: fixed;
+  bottom: 0;
+  width: 390px;
   border-radius: 1.875rem 1.875rem 0rem 0rem;
   background: #ffffff;
   padding: 1.875rem 1.25rem 2.5rem 1.25rem;
