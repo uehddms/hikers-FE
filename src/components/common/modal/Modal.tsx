@@ -28,10 +28,17 @@ export const Modal = ({ title, onClose, onKakaoShare, onLinkShare }: ModalProps)
               bgColor="#FAE100"
               color="#3B3B3B"
               fontSize="1.125rem"
+              width="9.8125rem"
             >
               카카오톡 공유
             </GreenBtn>
-            <GreenBtn onClick={onLinkShare} padding="0.75rem 1rem" bgColor="#349989" fontSize="1.125rem">
+            <GreenBtn
+              onClick={onLinkShare}
+              padding="0.75rem 1rem"
+              bgColor="#349989"
+              fontSize="1.125rem"
+              width="9.8125rem"
+            >
               링크 공유
             </GreenBtn>
           </Styled.ShareButtonsWrapper>
