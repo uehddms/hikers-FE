@@ -95,15 +95,3 @@ export const ShareButtonsWrapper = styled.div`
   padding: 1.88rem 0;
   margin-top: 1rem;
 `;
-
-export const ShareButton = styled.button<{ $bgColor: string }>`
-  width: 100%;
-  padding: 1rem;
-  border: none;
-  border-radius: 0.75rem;
-  background-color: ${(props) => props.$bgColor};
-  color: ${(props) => (props.$bgColor === "#FEE500" ? "#3B3B3B" : "#FFFFFF")};
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-`;

@@ -53,8 +53,8 @@ const CourseData = () => {
       window.Kakao.Share.sendDefault({
         objectType: "feed",
         content: {
-          title: `${courseTitle} ${courseLevel}`,
-          description: `소요시간: ${formatTime(totalDuration)}\n코스길이: ${totalDistance.toFixed(1)}km\n고도: ${totalElevation}m`,
+          title: `${courseTitle} `,
+          description: `난이도: ${courseLevel} 소요시간: ${formatTime(totalDuration)}\n코스길이: ${totalDistance.toFixed(1)}km\n고도: ${totalElevation}m`,
           imageUrl: "./assets/logo.svg",
           link: {
             mobileWebUrl: window.location.href,
