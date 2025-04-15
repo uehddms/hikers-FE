@@ -8,11 +8,21 @@ type GreenBtnProps = {
   bgColor?: string;
   color?: string;
   fontSize?: string;
+  isHover?: boolean;
+  width?: string;
 };
 
-export const GreenBtn = ({ onClick, children, padding, bgColor, color, fontSize }: GreenBtnProps) => {
+export const GreenBtn = ({ onClick, children, padding, bgColor, color, fontSize, isHover, width }: GreenBtnProps) => {
   return (
-    <Styled.GreenBtn onClick={onClick} $padding={padding} $bgColor={bgColor} $color={color} $fontSize={fontSize}>
+    <Styled.GreenBtn
+      onClick={onClick}
+      $padding={padding}
+      $bgColor={bgColor}
+      $color={color}
+      $fontSize={fontSize}
+      $isHover={isHover}
+      $width={width}
+    >
       {children}
     </Styled.GreenBtn>
   );
