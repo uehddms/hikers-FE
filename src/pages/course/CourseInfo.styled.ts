@@ -6,8 +6,6 @@ export const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  padding-bottom: 7rem;
-  /* padding: 0 20px; */
 
   h3 {
     margin: 24px 0 16px;
