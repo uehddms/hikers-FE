@@ -21,11 +21,13 @@ export const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  z-index: 1000;
+  z-index: 999; // sketchmap 때문에 999로 설정
 `;
 
 export const ModalContent = styled.div`
-  width: 100%;
+  position: fixed;
+  bottom: 0;
+  width: 390px;
   border-radius: 1.875rem 1.875rem 0rem 0rem;
   background: #ffffff;
   padding: 1.875rem 1.25rem 2.5rem 1.25rem;
@@ -94,16 +96,4 @@ export const ShareButtonsWrapper = styled.div`
   width: 100%;
   padding: 1.88rem 0;
   margin-top: 1rem;
-`;
-
-export const ShareButton = styled.button<{ $bgColor: string }>`
-  width: 100%;
-  padding: 1rem;
-  border: none;
-  border-radius: 0.75rem;
-  background-color: ${(props) => props.$bgColor};
-  color: ${(props) => (props.$bgColor === "#FEE500" ? "#3B3B3B" : "#FFFFFF")};
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
 `;

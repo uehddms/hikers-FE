@@ -5,11 +5,24 @@ type GreenBtnProps = {
   onClick?: () => void;
   children: ReactNode;
   padding?: string;
+  bgColor?: string;
+  color?: string;
+  fontSize?: string;
+  isHover?: boolean;
+  width?: string;
 };
 
-export const GreenBtn = ({ onClick, children, padding }: GreenBtnProps) => {
+export const GreenBtn = ({ onClick, children, padding, bgColor, color, fontSize, isHover, width }: GreenBtnProps) => {
   return (
-    <Styled.GreenBtn onClick={onClick} style={{ padding: padding }}>
+    <Styled.GreenBtn
+      onClick={onClick}
+      $padding={padding}
+      $bgColor={bgColor}
+      $color={color}
+      $fontSize={fontSize}
+      $isHover={isHover}
+      $width={width}
+    >
       {children}
     </Styled.GreenBtn>
   );

@@ -1,11 +1,46 @@
 import { useState } from "react";
 import { Modal } from "../../common/modal/Modal";
 import { GreenBtn } from "../../common/button/GreenBtn";
+import { LevelComp } from "../../common/item/Level";
 import * as Styled from "./CourseData.styled";
+
+interface KakaoShareButton {
+  title: string;
+  link: {
+    mobileWebUrl: string;
+    webUrl: string;
+  };
+}
+
+interface KakaoShareContent {
+  title: string;
+  description: string;
+  imageUrl: string;
+  link: {
+    mobileWebUrl: string;
+    webUrl: string;
+  };
+}
+
+interface KakaoShareParams {
+  objectType: string;
+  content: KakaoShareContent;
+  buttons: KakaoShareButton[];
+}
+
+interface KakaoShare {
+  sendDefault: (params: KakaoShareParams) => void;
+}
+
+interface KakaoSDK {
+  init: (key: string) => void;
+  isInitialized: () => boolean;
+  Share: KakaoShare;
+}
 
 declare global {
   interface Window {
-    Kakao: any;
+    Kakao: KakaoSDK;
   }
 }
 
@@ -53,8 +88,8 @@ const CourseData = () => {
       window.Kakao.Share.sendDefault({
         objectType: "feed",
         content: {
-          title: `${courseTitle} ${courseLevel}`,
-          description: `소요시간: ${formatTime(totalDuration)}\n코스길이: ${totalDistance.toFixed(1)}km\n고도: ${totalElevation}m`,
+          title: `${courseTitle} `,
+          description: `난이도: ${courseLevel} 소요시간: ${formatTime(totalDuration)}\n코스길이: ${totalDistance.toFixed(1)}km\n고도: ${totalElevation}m`,
           imageUrl: "./assets/logo.svg",
           link: {
             mobileWebUrl: window.location.href,
@@ -97,7 +132,7 @@ const CourseData = () => {
         <Styled.CourseTitleWrapper>
           <div style={{ display: "flex", alignItems: "center" }}>
             <Styled.CourseTitle>{courseTitle}</Styled.CourseTitle>
-            <Styled.CourseLevel>{courseLevel}</Styled.CourseLevel>
+            <LevelComp $level={courseLevel}>{courseLevel}</LevelComp>
           </div>
           <Styled.GreenBtnWrapper>
             <GreenBtn onClick={() => setIsModalOpen(true)}>코스 공유하기</GreenBtn>
