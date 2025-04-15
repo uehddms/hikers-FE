@@ -3,7 +3,15 @@ import { Modal } from "../../common/modal/Modal";
 import { GreenBtn } from "../../common/button/GreenBtn";
 import * as Styled from "./CourseData.styled";
 
-type KakaoShareContent = {
+interface KakaoShareButton {
+  title: string;
+  link: {
+    mobileWebUrl: string;
+    webUrl: string;
+  };
+}
+
+interface KakaoShareContent {
   title: string;
   description: string;
   imageUrl: string;
@@ -11,31 +19,27 @@ type KakaoShareContent = {
     mobileWebUrl: string;
     webUrl: string;
   };
-};
+}
 
-type KakaoShareButton = {
-  title: string;
-  link: {
-    mobileWebUrl: string;
-    webUrl: string;
-  };
-};
-
-type KakaoShareParams = {
+interface KakaoShareParams {
   objectType: string;
   content: KakaoShareContent;
   buttons: KakaoShareButton[];
-};
+}
 
-type KakaoShare = {
+interface KakaoShare {
   sendDefault: (params: KakaoShareParams) => void;
-};
+}
+
+interface KakaoSDK {
+  init: (key: string) => void;
+  isInitialized: () => boolean;
+  Share: KakaoShare;
+}
 
 declare global {
   interface Window {
-    Kakao: {
-      Share: KakaoShare;
-    };
+    Kakao: KakaoSDK;
   }
 }
 
