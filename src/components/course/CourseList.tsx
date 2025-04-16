@@ -117,7 +117,7 @@ export default function CourseList({ title }: CourseListProps) {
             onClick={() => !isFirstPage && setCurrentPage((prev) => Math.max(prev - 1, 0))}
             disabled={isFirstPage}
           >
-            <IoIosArrowBack size="auto" />
+            <IoIosArrowBack size="100%" />
           </Styled.PagingBtn>
           <Styled.PageNumber>{currentPage + 1}</Styled.PageNumber>
           <Styled.PagingBtn
@@ -127,7 +127,7 @@ export default function CourseList({ title }: CourseListProps) {
             }
             disabled={isLastPage}
           >
-            <IoIosArrowForward size="auto" />
+            <IoIosArrowForward size="100%" />
           </Styled.PagingBtn>
         </Styled.PaginationWrapper>
       </div>
