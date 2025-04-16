@@ -2,13 +2,15 @@ import * as Styled from "./styled";
 import squareBaseImg from "../../../assets/squareBaseImg.svg";
 
 type CrewItemProps = {
+  id: number;
   title: string;
   content: string;
+  onCrewItemClick: (id: number) => void;
 };
 
-export default function CrewItem({ title, content }: CrewItemProps) {
+export default function CrewItem({ id, title, content, onCrewItemClick }: CrewItemProps) {
   return (
-    <Styled.ItemWrapper>
+    <Styled.ItemWrapper onClick={() => onCrewItemClick(id)}>
       <img src={squareBaseImg} alt="squareBaseImg" />
       <Styled.InfoWrapper>
         <Styled.TitleWrapper>
