@@ -25,6 +25,7 @@ export const ReviewWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.31rem;
+  height: 26.875rem;
 `;
 
 export const PaginationWrapper = styled.div`
