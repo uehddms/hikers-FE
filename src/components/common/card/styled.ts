@@ -55,14 +55,6 @@ export const CardTitle = styled.h3`
   color: inherit;
 `;
 
-export const CardLevel = styled.span`
-  padding: 4px 12px;
-  border-radius: 16px;
-  background-color: #e6f3f0;
-  color: #2b8a3e;
-  font-size: 14px;
-`;
-
 export const CardDescription = styled.p<{ $hasImage?: boolean }>`
   display: -webkit-box;
   -webkit-box-orient: vertical;
