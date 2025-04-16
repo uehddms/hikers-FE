@@ -21,11 +21,18 @@ export const BackBtnWrapper = styled.button`
   cursor: pointer;
 `;
 
-export const Wrapper = styled.div<{ $isOnboarding?: boolean }>`
-  width: 100%;
-  height: 100%;
+export const HeaderBox = styled.div<{ $isOnboarding?: boolean }>`
   display: flex;
   flex-direction: row;
   padding: ${({ $isOnboarding }) => ($isOnboarding ? "2.8125rem 0 0 0.8125rem" : "2.8125rem 0 0 0.1875rem")};
   position: relative;
+`;
+
+export const Container = styled.div`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 390px;
+  background-color: white;
+  z-index: 200;
 `;

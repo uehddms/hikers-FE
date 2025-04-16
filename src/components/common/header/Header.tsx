@@ -10,13 +10,15 @@ type HeaderProps = {
 
 export const Header = ({ onClick, children, isOnboarding = false }: HeaderProps) => {
   return (
-    <Styled.Wrapper $isOnboarding={isOnboarding}>
-      <Styled.BackBtnWrapper onClick={onClick}>
-        <img src={backBtn} />
-      </Styled.BackBtnWrapper>
-      <Styled.TextWrapper>
-        <Styled.HeaderText>{children}</Styled.HeaderText>
-      </Styled.TextWrapper>
-    </Styled.Wrapper>
+    <Styled.Container>
+      <Styled.HeaderBox $isOnboarding={isOnboarding}>
+        <Styled.BackBtnWrapper onClick={onClick}>
+          <img src={backBtn} />
+        </Styled.BackBtnWrapper>
+        <Styled.TextWrapper>
+          <Styled.HeaderText>{children}</Styled.HeaderText>
+        </Styled.TextWrapper>
+      </Styled.HeaderBox>
+    </Styled.Container>
   );
 };
