@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CourseItem from "../common/item/CourseItem";
+import CourseItem from "../../common/item/CourseItem";
 import * as Styled from "./CourseList.styled";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
