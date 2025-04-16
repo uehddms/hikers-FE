@@ -41,9 +41,13 @@ export default function ReviewList({ title }: ReviewListProps) {
 
   const [reviewData, setReviewData] = useState(MOCK_REVIEW);
 
-  const onLikeClick = (id: number) => {
-    console.log(`${id} 좋아요 클릭`);
-    const updatedLike = reviewData.map((item) => (item.id === id ? { ...item, isLiked: !item.isLiked } : item));
+  const onReviewItemClick = (itemId: number) => {
+    console.log(`${itemId} 아이템 조회로 이동`);
+  };
+
+  const onLikeClick = (itemId: number) => {
+    console.log(`${itemId} 좋아요 클릭`);
+    const updatedLike = reviewData.map((item) => (item.id === itemId ? { ...item, isLiked: !item.isLiked } : item));
     setReviewData(updatedLike);
   };
 
@@ -73,6 +77,7 @@ export default function ReviewList({ title }: ReviewListProps) {
               level={item.level}
               isLiked={item.isLiked}
               isWriter={item.isWriter}
+              onReviewItemClick={() => onReviewItemClick(item.id)}
               onLikeClick={() => onLikeClick(item.id)}
             />
           ))}
@@ -82,7 +87,7 @@ export default function ReviewList({ title }: ReviewListProps) {
             onClick={() => !isFirstPage && setCurrentPage((prev) => Math.max(prev - 1, 0))}
             disabled={isFirstPage}
           >
-            <IoIosArrowBack size="auto" />
+            <IoIosArrowBack size="100%" />
           </Styled.PagingBtn>
           <Styled.PageNumber>{currentPage + 1}</Styled.PageNumber>
           <Styled.PagingBtn
@@ -92,7 +97,7 @@ export default function ReviewList({ title }: ReviewListProps) {
             }
             disabled={isLastPage}
           >
-            <IoIosArrowForward size="auto" />
+            <IoIosArrowForward size="100%" />
           </Styled.PagingBtn>
         </Styled.PaginationWrapper>
       </div>
