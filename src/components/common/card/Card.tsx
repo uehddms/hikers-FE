@@ -5,29 +5,29 @@ import { LevelComp } from "../item/Level";
 import { GreenBtn } from "../button/GreenBtn";
 
 interface CardProps {
-  onClick?: () => void;
   title: string;
   level: string;
   description: string;
   imgUrl?: string;
   isLiked: boolean;
   onLikeClick: () => void;
+  onDetailClick: () => void;
 }
 
-export const Card = ({ title, level, description, imgUrl, isLiked, onLikeClick, onClick }: CardProps) => {
+export const Card = ({ title, level, description, imgUrl, isLiked, onLikeClick, onDetailClick }: CardProps) => {
   const handleLikeClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     onLikeClick();
   };
 
-  const handleCardClick = () => {
-    onClick?.();
+  const handleDetailClick = () => {
+    onDetailClick();
   };
 
   const hasImage = !!imgUrl;
 
   return (
-    <Styled.CardContainer onClick={handleCardClick} $imgUrl={imgUrl}>
+    <Styled.CardContainer $imgUrl={imgUrl}>
       <Styled.CardContent $hasImage={hasImage}>
         <Styled.CardTopWrapper>
           <Styled.CardTitle>{title}</Styled.CardTitle>
@@ -38,7 +38,9 @@ export const Card = ({ title, level, description, imgUrl, isLiked, onLikeClick, 
           <Styled.LikeButton onClick={handleLikeClick}>
             <Styled.CardIsLike src={isLiked ? greenHeart : WhiteHeart} alt={isLiked ? "좋아요 취소" : "좋아요"} />
           </Styled.LikeButton>
-          <GreenBtn bgColor="#A4A4A4">자세히 보기</GreenBtn>
+          <GreenBtn bgColor="#A4A4A4" onClick={handleDetailClick}>
+            자세히 보기
+          </GreenBtn>
         </Styled.CardBottomWrapper>
       </Styled.CardContent>
     </Styled.CardContainer>

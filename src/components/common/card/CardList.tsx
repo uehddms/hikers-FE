@@ -63,7 +63,7 @@ export const CardList = ({ items, onItemClick }: CardListProps) => {
             imgUrl={item.imgUrl}
             isLiked={likedItems.has(item.id)}
             onLikeClick={() => handleLikeClick(item.id)}
-            onClick={() => onItemClick?.(item.id)}
+            onDetailClick={() => onItemClick?.(item.id)}
           />
         ))}
       </Styled.CardsWrapper>
