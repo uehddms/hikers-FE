@@ -19,12 +19,21 @@ iframe {overflow:hidden;margin:0;border:0;padding:0;vertical-align:top}
 mark {background-color:transparent}
 i {font-style:normal}
 
+
 #root {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
 	min-height: 100vh;
 }
+
+@font-face {
+    font-family: "Pretendard";
+    src: url("/fonts/PretendardVariable.woff2") format('woff2-variations');
+	font-display: swap;
+}
+
+
 
 
 // 초기 html 설정
