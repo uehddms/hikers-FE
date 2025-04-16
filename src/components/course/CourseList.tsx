@@ -70,9 +70,15 @@ export default function CourseList({ title }: CourseListProps) {
 
   const [courseData, setCourseData] = useState(MOCK_COURSE);
 
-  const onScrapClick = (id: number) => {
-    console.log(`${id} 스크랩 클릭`);
-    const updatedScrap = courseData.map((item) => (item.id === id ? { ...item, isScraped: !item.isScraped } : item));
+  const onCourseItemClock = (itemId: number) => {
+    console.log(`${itemId} 아이템 조회로 이동`);
+  };
+
+  const onScrapClick = (itemId: number) => {
+    console.log(`${itemId} 스크랩 클릭`);
+    const updatedScrap = courseData.map((item) =>
+      item.id === itemId ? { ...item, isScraped: !item.isScraped } : item
+    );
     setCourseData(updatedScrap);
   };
 
@@ -101,6 +107,7 @@ export default function CourseList({ title }: CourseListProps) {
               totalDuration={item.totalDuration}
               level={item.level}
               isScraped={item.isScraped}
+              onCourseItemClock={() => onCourseItemClock(item.id)}
               onScrapClick={() => onScrapClick(item.id)}
             />
           ))}

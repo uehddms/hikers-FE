@@ -11,6 +11,7 @@ type CourseItemProps = {
   courseRoute: string;
   totalDuration: string;
   isScraped: boolean;
+  onCourseItemClock: (e: number) => void;
   onScrapClick: (e: number) => void;
 };
 
@@ -22,10 +23,11 @@ export default function CourseItem({
   courseRoute,
   totalDuration,
   isScraped,
+  onCourseItemClock,
   onScrapClick,
 }: CourseItemProps) {
   return (
-    <Styled.ItemWrapper>
+    <Styled.ItemWrapper onClick={() => onCourseItemClock(id)}>
       <img src={squareBaseImg} alt="squareBaseImg" />
       <Styled.InfoWrapper>
         <Styled.TitleWrapper>
