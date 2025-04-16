@@ -12,6 +12,7 @@ type ReviewItemProps = {
   courseName: string;
   isLiked: boolean;
   isWriter: boolean;
+  onReviewItemClick: (id: number) => void;
   onLikeClick: (id: number) => void;
 };
 
@@ -24,10 +25,11 @@ export default function ReviewItem({
   courseName,
   isLiked,
   isWriter,
+  onReviewItemClick,
   onLikeClick,
 }: ReviewItemProps) {
   return (
-    <Styled.ItemWrapper>
+    <Styled.ItemWrapper onClick={() => onReviewItemClick(id)}>
       <img src={squareBaseImg} alt="squareBaseImg" />
       <Styled.InfoWrapper>
         <Styled.TitleWrapper>

@@ -44,6 +44,10 @@ export default function CrewList() {
 
   const [crewData] = useState(MOCK_CREWITEMS);
 
+  const onCrewItemClick = (itemId: number) => {
+    console.log(`${itemId} 아이템 조회로 이동`);
+  };
+
   const itemsPerPage = 5;
   const [currentPage, setCurrentPage] = useState(0);
   const offset = currentPage * itemsPerPage;
@@ -61,7 +65,13 @@ export default function CrewList() {
       <div>
         <Styled.CrewWrapper>
           {currentItems.map((crew) => (
-            <CrewItem key={crew.id} title={crew.title} content={crew.content} />
+            <CrewItem
+              key={crew.id}
+              id={crew.id}
+              title={crew.title}
+              content={crew.content}
+              onCrewItemClick={() => onCrewItemClick(crew.id)}
+            />
           ))}
         </Styled.CrewWrapper>
         <Styled.PaginationWrapper>
@@ -69,7 +79,7 @@ export default function CrewList() {
             onClick={() => !isFirstPage && setCurrentPage((prev) => Math.max(prev - 1, 0))}
             disabled={isFirstPage}
           >
-            <IoIosArrowBack size="auto" />
+            <IoIosArrowBack size="100%" />
           </Styled.PagingBtn>
           <Styled.PageNumber>{currentPage + 1}</Styled.PageNumber>
           <Styled.PagingBtn
@@ -78,7 +88,7 @@ export default function CrewList() {
             }
             disabled={isLastPage}
           >
-            <IoIosArrowForward size="auto" />
+            <IoIosArrowForward size="100%" />
           </Styled.PagingBtn>
         </Styled.PaginationWrapper>
       </div>

@@ -8,6 +8,7 @@ export const ItemWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 0.87rem;
+  cursor: pointer;
 `;
 
 export const InfoWrapper = styled.div`
