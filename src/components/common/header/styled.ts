@@ -22,7 +22,6 @@ export const BackBtnWrapper = styled.button`
 `;
 
 export const HeaderBox = styled.div<{ $isOnboarding?: boolean }>`
-export const HeaderBox = styled.div<{ $isOnboarding?: boolean }>`
   display: flex;
   flex-direction: row;
   padding: ${({ $isOnboarding }) => ($isOnboarding ? "2.8125rem 0 0 0.8125rem" : "2.8125rem 0 0 0.1875rem")};
